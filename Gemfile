@@ -5,6 +5,12 @@ ruby '2.1.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
+
+# Use postgres as the database for Active Record
+gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -41,14 +47,13 @@ group :development, :test do
   gem 'pry', require: 'pry'
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4.2'
+  gem 'dotenv-rails'
 end
-
-gem 'pg'
 
 gem 'rails_12factor'
 
-gem 'ims-lti', '2.0.0.beta.41'
-gem 'rails_lti2_provider', git: 'https://github.com/rivernate/rails_lti2_provider.git', ref: '42ea6bad1c94a4675329ffc710d8dfa9a02a8321'
+gem 'ims-lti'
+gem 'rails_lti2_provider', git: 'https://github.com/rivernate/rails_lti2_provider.git'
 
 gem 'react-rails', '1.5.0'
 

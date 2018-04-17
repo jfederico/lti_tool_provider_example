@@ -1,17 +1,23 @@
-development: &default
-  adapter: postgresql
+default: &default
+  adapter: <%= ENV['DB_ADAPTER'] || 'sqlite3' %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   encoding: utf8
-  database: lti_tool_provider_example_development
   pool: 5
-  username: postgres
-  host: postgres
+  timeout: 5000
+  connect_timeout: 10
+
+development:
+  <<: *default
+  #database: lti_tool_provider_example_development
+  database: db/development.sqlite3
 
 test:
   <<: *default
-  database: lti_tool_provider_example_test
+  #database: lti_tool_provider_example_test
+  database: db/test.sqlite3
 
 production:
   <<: *default
-  database: lti_tool_provider_example_production
-  timeout: 5000
-  connect_timeout: 10
+  #database: lti_tool_provider_example_production
+  database: db/test.sqlite3

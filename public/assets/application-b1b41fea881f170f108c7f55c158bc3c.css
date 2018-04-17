@@ -1,0 +1,129 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+/* line 1, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+body {
+  background-color: #eee;
+  padding: 0 50px 20px;
+}
+
+/* line 5, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+.form-signin {
+  max-width: 430px;
+  padding: 15px;
+  margin: 40px auto;
+}
+
+/* line 11, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+/* line 14, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+.form-signin .checkbox {
+  font-weight: normal;
+}
+
+/* line 17, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* line 27, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+/* line 30, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* line 35, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* line 41, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+table {
+  background: white;
+}
+
+/* line 45, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+table thead th {
+  background-color: #595959;
+  color: #fff;
+  padding: 2px 4px;
+}
+
+/* line 51, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+table td {
+  padding: 5px;
+  max-width: 500px;
+  word-wrap: break-word;
+}
+
+/* line 57, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+.checkbox-col {
+  width: 5em;
+}
+
+/* line 61, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+.add-remove-col {
+  width: 3em;
+}
+
+/* line 65, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+.add-icon {
+  color: #00b500;
+}
+
+/* line 69, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+.remove-icon {
+  color: red;
+}
+
+/* line 73, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+.love-icon {
+  color: #FF69B4;
+}
+
+/* line 77, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+code.xml {
+  font-size: 10px;
+}
+
+@media only screen and (min-width: 992px) {
+  /* line 82, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+  code.xml {
+    font-size: 10px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 88, /home/ubuntu/lti_tool_provider_example/app/assets/stylesheets/guide.css.scss */
+  code.xml {
+    font-size: 9px;
+  }
+}

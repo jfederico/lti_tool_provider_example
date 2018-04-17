@@ -1,0 +1,7 @@
+# Database configuration
+# DB_ADAPTER=<postgresql|sqlite3>
+# DB_USERNAME=
+# DB_PASSWORD=
+# DB_HOST=
+# DB_POOL=
+# DB_TIMEOUT=
