@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.6'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -46,14 +46,14 @@ gem 'unicorn'
 group :development, :test do
   gem 'pry', require: 'pry'
   gem 'byebug'
-  gem 'rspec-rails', '~> 3.4.2'
+  gem 'rspec-rails'
   gem 'dotenv-rails'
 end
 
 gem 'rails_12factor'
 
 gem 'ims-lti'
-gem 'rails_lti2_provider', git: 'https://github.com/rivernate/rails_lti2_provider.git'
+gem 'rails_lti2_provider', git: 'https://github.com/rivernate/rails_lti2_provider.git', ref: '42ea6bad1c94a4675329ffc710d8dfa9a02a8321'
 
 gem 'react-rails', '1.5.0'
 

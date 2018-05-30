@@ -10,12 +10,12 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV['DB_DATABASE'] || 'db/development.sqlite3' %>_development
+  database: <%= ENV['DB_DATABASE'] || 'db/development.sqlite3' %>
 
 test:
   <<: *default
-  database: <%= ENV['DB_DATABASE'] || 'db/test.sqlite3' %>_test
+  database: <%= ENV['DB_DATABASE'] || 'db/test.sqlite3' %>
 
 production:
   <<: *default
-  database: <%= ENV['DB_DATABASE'] || 'db/production.sqlite3' %>_production
+  database: <%= ENV['DB_DATABASE'] || 'db/production.sqlite3' %>

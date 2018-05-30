@@ -1,9 +1,10 @@
 GIT
   remote: https://github.com/rivernate/rails_lti2_provider.git
-  revision: 90dadaf6cec42d418f3e0b601276f6f9aa2cc009
+  revision: 42ea6bad1c94a4675329ffc710d8dfa9a02a8321
+  ref: 42ea6bad1c94a4675329ffc710d8dfa9a02a8321
   specs:
-    rails_lti2_provider (0.0.2)
-      ims-lti (~> 2.2.1)
+    rails_lti2_provider (0.0.1)
+      ims-lti (~> 2.0.0.beta.34)
       rails (~> 4.1.6)
 
 GEM
@@ -35,17 +36,13 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    addressable (2.5.2)
-      public_suffix (>= 2.0.2, < 4.0)
-    aes_key_wrap (1.0.1)
     arel (5.0.1.20140414130214)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
-    bindata (2.4.3)
     builder (3.2.3)
-    byebug (9.0.6)
+    byebug (10.0.2)
     coderay (1.1.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -70,12 +67,10 @@ GEM
     hike (1.2.3)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    ims-lti (2.2.2)
-      addressable (~> 2.5, >= 2.5.1)
-      builder (~> 3.2)
+    ims-lti (2.0.0.beta.41)
+      builder
       faraday (~> 0.8)
       faraday_middleware (~> 0.8)
-      json-jwt (~> 1.7)
       simple_oauth (= 0.2)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -84,10 +79,6 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.6)
-    json-jwt (1.9.4)
-      activesupport
-      aes_key_wrap
-      bindata
     kgio (2.11.2)
     libv8 (3.16.14.19)
     lodash-rails (3.7.0)
@@ -103,7 +94,6 @@ GEM
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    public_suffix (3.0.2)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -129,7 +119,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.19.0)
     rake (12.3.1)
-    rdoc (5.1.0)
+    rdoc (6.0.4)
     react-rails (1.5.0)
       babel-transpiler (>= 0.7.0)
       coffee-script-source (~> 1.8)
@@ -138,23 +128,23 @@ GEM
       rails (>= 3.2)
       tilt
     ref (2.0.0)
-    rspec-core (3.4.4)
-      rspec-support (~> 3.4.0)
-    rspec-expectations (3.4.0)
+    rspec-core (3.7.1)
+      rspec-support (~> 3.7.0)
+    rspec-expectations (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.4.0)
-    rspec-mocks (3.4.1)
+      rspec-support (~> 3.7.0)
+    rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.4.0)
-    rspec-rails (3.4.2)
-      actionpack (>= 3.0, < 4.3)
-      activesupport (>= 3.0, < 4.3)
-      railties (>= 3.0, < 4.3)
-      rspec-core (~> 3.4.0)
-      rspec-expectations (~> 3.4.0)
-      rspec-mocks (~> 3.4.0)
-      rspec-support (~> 3.4.0)
-    rspec-support (3.4.1)
+      rspec-support (~> 3.7.0)
+    rspec-rails (3.7.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+      rspec-support (~> 3.7.0)
+    rspec-support (3.7.1)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -207,7 +197,7 @@ DEPENDENCIES
   rails_12factor
   rails_lti2_provider!
   react-rails (= 1.5.0)
-  rspec-rails (~> 3.4.2)
+  rspec-rails
   sass-rails (~> 4.0.2)
   sdoc
   simple_oauth (= 0.2.0)
@@ -218,7 +208,7 @@ DEPENDENCIES
   unicorn
 
 RUBY VERSION
-   ruby 2.1.6p336
+   ruby 2.3.1p112
 
 BUNDLED WITH
-   1.16.1
+   1.16.2

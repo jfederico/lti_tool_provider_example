@@ -43,3 +43,4 @@ bower.json
 
 # Ignore docker-compose override file
 docker-compose.override.yml
+
