@@ -11,7 +11,7 @@ class GuideController < ApplicationController
   end
 
   def xml_config
-    tc = IMS::LTI::Services::ToolConfig.new(:title => "Example Tool Provider", :launch_url => relative_url(blti_launch_path))
+    tc = IMS::LTI::Services::ToolConfig.new(:title => "Example Tool Provider", :launch_url => blti_launch_url)
     tc.description = "This is a Sample Tool Provider."
 
     if query_params = request.query_parameters
@@ -35,11 +35,11 @@ class GuideController < ApplicationController
     message_type = request.query_parameters["#{placement_key}_message_type"] || :basic_lti_request
     navigation_params = case message_type
                         when 'content_item_selection'
-                          {url: relative_url(content_item_request_launch_path), message_type: 'ContentItemSelection'}
+                          {url: content_item_request_launch_url, message_type: 'ContentItemSelection'}
                         when 'content_item_selection_request'
-                          {url: relative_url(content_item_request_launch_path), message_type: 'ContentItemSelectionRequest'}
+                          {url: content_item_request_launch_url, message_type: 'ContentItemSelectionRequest'}
                         else
-                          {url: relative_url(blti_launch_path)}
+                          {url: blti_launch_url}
                         end
 
     navigation_params[:icon_url] = view_context.asset_url('selector.png') + "?#{placement_key}"

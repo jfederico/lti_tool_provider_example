@@ -15,8 +15,4 @@ module ApplicationHelper
     end
   end
 
-  def relative_url(path)
-    "#{root_url.chomp("/")}#{Rails.application.config.relative_url_root}#{path}"
-  end
-
 end

@@ -29,5 +29,6 @@ LtiToolProvider::Application.configure do
 
   config.react.variant = :development
 
-  config.relative_url_root = ENV['RELATIVE_URL_ROOT'] || ''
+  config.relative_url_root = ENV['RELATIVE_URL_ROOT'] || '/'
+  config.assets.prefix = ENV['RELATIVE_URL_ROOT'] || '/'
 end
