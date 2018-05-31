@@ -79,4 +79,6 @@ LtiToolProvider::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.react.variant = :production
+
+  config.relative_url_root = ENV['RELATIVE_URL_ROOT'] || ''
 end

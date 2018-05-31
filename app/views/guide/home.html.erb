@@ -2,10 +2,10 @@
   <form class="form-signin">
     <h1 class="form-signin-heading">LTI Test Provider</h1>
     <br />
-    <h4><%= link_to "Configure LTI 1 Provider", xml_builder_url %></h4>
+    <h4><%= link_to "Configure LTI 1 Provider", relative_url(xml_builder_path) %></h4>
     <br />
     <h4>LTI 2 Config</h4>
     <p>Paste this url into your tool consumer to register this tool:</p>
-    <p><input type="text" onClick="this.select()" class="form-control" value="<%= tool_registration_url %>" /></p>
+    <p><input type="text" onClick="this.select()" class="form-control" value="<%= relative_url(tool_registration_path) %>" /></p>
   </form>
 </div>

@@ -28,4 +28,6 @@ LtiToolProvider::Application.configure do
   config.assets.debug = true
 
   config.react.variant = :development
+
+  config.relative_url_root = ENV['RELATIVE_URL_ROOT'] || ''
 end
