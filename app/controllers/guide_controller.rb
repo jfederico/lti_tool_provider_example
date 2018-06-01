@@ -20,7 +20,7 @@ class GuideController < ApplicationController
       tc.set_ext_param(platform, :selection_height, query_params[:selection_height])
       tc.set_ext_param(platform, :privacy_level, 'public')
       tc.set_ext_param(platform, :text, 'Extension text')
-      tc.set_ext_param(platform, :icon_url, view_context.asset_url('selector.png'))
+      tc.set_ext_param(platform, :icon_url, view_context.image_url("selector.png")) #root_url +  #view_context.asset_url('selector.png'))
       tc.set_ext_param(platform, :domain, request.host_with_port)
 
       query_params[:custom_params].each { |_, v| tc.set_custom_param(v[:name].to_sym, v[:value]) } if query_params[:custom_params]
