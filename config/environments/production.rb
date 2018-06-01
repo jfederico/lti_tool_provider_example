@@ -81,5 +81,5 @@ LtiToolProvider::Application.configure do
   config.react.variant = :production
 
   config.relative_url_root = ENV['RELATIVE_URL_ROOT'] || '/'
-  config.assets.prefix = ENV['RELATIVE_URL_ROOT'] || '/'
+  config.assets.prefix = ENV['RELATIVE_URL_ROOT'] + '/assets' || '/assets'
 end
