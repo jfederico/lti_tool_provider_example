@@ -1,7 +1,9 @@
 class MessageController < ApplicationController
+  include ApplicationHelper
   include RailsLti2Provider::ControllerHelpers
 
   skip_before_action :verify_authenticity_token
+  before_filter :lti_application_permitted
   before_filter :lti_authentication, except: [:youtube, :signed_content_item_request]
 
   rescue_from RailsLti2Provider::LtiLaunch::Unauthorized do |ex|
@@ -22,6 +24,8 @@ class MessageController < ApplicationController
 
   def basic_lti_launch_request
     process_message
+    # Redirect to external application if configured
+    redirect_to lti_apps_url(params[:app]) unless params[:app] == 'default'
   end
 
   def content_item_selection

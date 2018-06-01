@@ -3,6 +3,8 @@ require 'ims/lti'
 class GuideController < ApplicationController
   include ApplicationHelper
 
+  before_filter :lti_application_permitted
+
   def home
   end
 
@@ -11,7 +13,7 @@ class GuideController < ApplicationController
   end
 
   def xml_config
-    tc = IMS::LTI::Services::ToolConfig.new(:title => "Example Tool Provider", :launch_url => blti_launch_url)
+    tc = IMS::LTI::Services::ToolConfig.new(:title => "Example Tool Provider", :launch_url => blti_launch_url(:app => params[:app])) #"#{location}/#{year}/#{id}"
     tc.description = "This is a Sample Tool Provider."
 
     if query_params = request.query_parameters
