@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.16'
+gem 'rails', '4.2.10'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -51,7 +51,7 @@ group :development, :test do
 end
 
 gem 'ims-lti'
-gem 'rails_lti2_provider', git: 'https://github.com/rivernate/rails_lti2_provider.git', ref: '42ea6bad1c94a4675329ffc710d8dfa9a02a8321'
+gem 'rails_lti2_provider', git: 'https://github.com/jfederico/rails_lti2_provider.git', ref: '6d14293b23ce07b5270da5dbcd27d1524a8f25a3'
 
 gem 'react-rails', '1.5.0'
 

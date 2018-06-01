@@ -13,26 +13,26 @@
 
 ActiveRecord::Schema.define(version: 20160420155226) do
 
-  create_table "collaboration_callbacks", force: true do |t|
-    t.string   "request_method"
-    t.string   "host"
+  create_table "collaboration_callbacks", force: :cascade do |t|
+    t.string   "request_method", limit: 255
+    t.string   "host",           limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "rails_lti2_provider_lti_launches", force: true do |t|
+  create_table "rails_lti2_provider_lti_launches", force: :cascade do |t|
     t.integer  "tool_id",    limit: 8
-    t.string   "nonce"
+    t.string   "nonce",      limit: 255
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "rails_lti2_provider_registrations", force: true do |t|
-    t.string   "uuid"
+  create_table "rails_lti2_provider_registrations", force: :cascade do |t|
+    t.string   "uuid",                        limit: 255
     t.text     "registration_request_params"
     t.text     "tool_proxy_json"
-    t.string   "workflow_state"
+    t.string   "workflow_state",              limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tool_id",                     limit: 8
@@ -41,13 +41,13 @@ ActiveRecord::Schema.define(version: 20160420155226) do
 
   add_index "rails_lti2_provider_registrations", ["correlation_id"], name: "index_rails_lti2_provider_registrations_on_correlation_id", unique: true
 
-  create_table "rails_lti2_provider_tools", force: true do |t|
-    t.string   "uuid"
+  create_table "rails_lti2_provider_tools", force: :cascade do |t|
+    t.string   "uuid",          limit: 255
     t.text     "shared_secret"
     t.text     "tool_settings"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "lti_version"
+    t.string   "lti_version",   limit: 255
   end
 
 end
