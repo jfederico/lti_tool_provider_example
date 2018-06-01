@@ -50,8 +50,6 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
-gem 'rails_12factor'
-
 gem 'ims-lti'
 gem 'rails_lti2_provider', git: 'https://github.com/rivernate/rails_lti2_provider.git', ref: '42ea6bad1c94a4675329ffc710d8dfa9a02a8321'
 
