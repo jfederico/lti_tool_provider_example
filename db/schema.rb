@@ -13,34 +13,26 @@
 
 ActiveRecord::Schema.define(version: 20160420155226) do
 
-  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
-    t.string   "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "ar_internal_metadata", ["key"], name: "sqlite_autoindex_ar_internal_metadata_1", unique: true
-
   create_table "collaboration_callbacks", force: :cascade do |t|
-    t.string   "request_method", limit: 255
-    t.string   "host",           limit: 255
+    t.string   "request_method"
+    t.string   "host"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "rails_lti2_provider_lti_launches", force: :cascade do |t|
     t.integer  "tool_id",    limit: 8
-    t.string   "nonce",      limit: 255
+    t.string   "nonce"
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "rails_lti2_provider_registrations", force: :cascade do |t|
-    t.string   "uuid",                        limit: 255
+    t.string   "uuid"
     t.text     "registration_request_params"
     t.text     "tool_proxy_json"
-    t.string   "workflow_state",              limit: 255
+    t.string   "workflow_state"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tool_id",                     limit: 8
@@ -50,12 +42,12 @@ ActiveRecord::Schema.define(version: 20160420155226) do
   add_index "rails_lti2_provider_registrations", ["correlation_id"], name: "index_rails_lti2_provider_registrations_on_correlation_id", unique: true
 
   create_table "rails_lti2_provider_tools", force: :cascade do |t|
-    t.string   "uuid",          limit: 255
+    t.string   "uuid"
     t.text     "shared_secret"
     t.text     "tool_settings"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "lti_version",   limit: 255
+    t.string   "lti_version"
   end
 
 end

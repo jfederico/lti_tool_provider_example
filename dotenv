@@ -9,3 +9,5 @@
 # DB_CONNECT_TIMEOUT=10
 # DB_DATABASE=lti_tool_provider_example_production
 # RELATIVE_URL_ROOT=/lti
+# LTI_APPS_DEFAULT=rooms
+# LTI_APPS=rooms,greenlight
