@@ -4,18 +4,18 @@ class MessageController < ApplicationController
 
   skip_before_action :verify_authenticity_token
   before_filter :lti_application_permitted
-  before_filter :lti_authentication, except: [:youtube, :signed_content_item_request]
+  before_filter :lti_authentication, except: %i[youtube signed_content_item_request]
 
   rescue_from RailsLti2Provider::LtiLaunch::Unauthorized do |ex|
     @error = 'Authentication failed with: ' + case ex.error
-                                                when :invalid_signature
-                                                  'The OAuth Signature was Invalid'
-                                                when :invalid_nonce
-                                                  'The nonce has already been used'
-                                                when :request_to_old
-                                                  'The request is to old'
-                                                else
-                                                  'Unknown Error'
+                                              when :invalid_signature
+                                                'The OAuth Signature was Invalid'
+                                              when :invalid_nonce
+                                                'The nonce has already been used'
+                                              when :request_to_old
+                                                'The request is to old'
+                                              else
+                                                'Unknown Error'
                                               end
     @message = IMS::LTI::Models::Messages::Message.generate(request.request_parameters)
     @header = SimpleOAuth::Header.new(:post, request.url, @message.post_params, consumer_key: @message.oauth_consumer_key, consumer_secret: 'secret', callback: 'about:blank')
@@ -24,8 +24,10 @@ class MessageController < ApplicationController
 
   def basic_lti_launch_request
     process_message
+    log_hash params
     # Redirect to external application if configured
-    redirect_to lti_apps_url(params[:app]) unless params[:app] == 'default'
+    cookies[room_handler] = { :value => @message.to_json, :expires => 30.minutes.from_now }
+    redirect_to lti_apps_url(params[:app], handler: room_handler) unless params[:app] == 'default'
   end
 
   def content_item_selection
@@ -47,12 +49,14 @@ class MessageController < ApplicationController
   end
 
   private
+    def process_message
+      @secret = "&#{RailsLti2Provider::Tool.find(@lti_launch.tool_id).shared_secret}"
+      # TODO: should we create the lti_launch with all of the oauth params as well?
+      @message = (@lti_launch && @lti_launch.message) || IMS::LTI::Models::Messages::Message.generate(request.request_parameters)
+      @header = SimpleOAuth::Header.new(:post, request.url, @message.post_params, consumer_key: @message.oauth_consumer_key, consumer_secret: 'secret', callback: 'about:blank')
+    end
 
-  def process_message
-    @secret = "&#{RailsLti2Provider::Tool.find(@lti_launch.tool_id).shared_secret}"
-    #TODO: should we create the lti_launch with all of the oauth params as well?
-    @message = (@lti_launch && @lti_launch.message) || IMS::LTI::Models::Messages::Message.generate(request.request_parameters)
-    @header = SimpleOAuth::Header.new(:post, request.url, @message.post_params, consumer_key: @message.oauth_consumer_key, consumer_secret: 'secret', callback: 'about:blank')
-  end
-
+    def room_handler
+      Digest::SHA1.hexdigest(params[:app] + params["tool_consumer_instance_guid"] + params["resource_link_id"])
+    end
 end

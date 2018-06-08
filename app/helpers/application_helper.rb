@@ -22,4 +22,22 @@ module ApplicationHelper
     raise "app not allowed" unless params[:app] == 'default' || permitted_apps.include?(params[:app])
   end
 
+  def log_div(seed, n)
+    div = seed
+    for i in 1..n
+      div += seed
+    end
+    logger.info div
+  end
+
+  def log_hash(h)
+    log_div("*", 100)
+    if h
+      h.sort.map do |key, value|
+        logger.info "#{key}: " + value
+      end
+    end
+    log_div("*", 100)
+  end
+
 end
